@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BF285C7B25E3FA90007B3BF9 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = BF285C7A25E3FA90007B3BF9 /* main.c */; };
+		BF285C8425E6ADC3007B3BF9 /* itoa.c in Sources */ = {isa = PBXBuildFile; fileRef = BF285C8325E6ADC3007B3BF9 /* itoa.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,8 @@
 /* Begin PBXFileReference section */
 		BF285C7725E3FA90007B3BF9 /* demo */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = demo; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF285C7A25E3FA90007B3BF9 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		BF285C8225E6AD64007B3BF9 /* itoa.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = itoa.h; sourceTree = "<group>"; };
+		BF285C8325E6ADC3007B3BF9 /* itoa.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = itoa.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,8 @@
 			isa = PBXGroup;
 			children = (
 				BF285C7A25E3FA90007B3BF9 /* main.c */,
+				BF285C8225E6AD64007B3BF9 /* itoa.h */,
+				BF285C8325E6ADC3007B3BF9 /* itoa.c */,
 			);
 			path = demo;
 			sourceTree = "<group>";
@@ -118,6 +123,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF285C8425E6ADC3007B3BF9 /* itoa.c in Sources */,
 				BF285C7B25E3FA90007B3BF9 /* main.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -6,6 +6,8 @@
 //
 
 #include <stdio.h>
+#include <stdlib.h>
+#include "itoa.h"
 
 int main(int argc, const char * argv[]) {
     // insert code here...
@@ -96,5 +98,35 @@ int main(int argc, const char * argv[]) {
     float y23 = -43;
     printf("%d,%d,%f,%f\n",y20,y21,y22,y23); // 将一个小数赋值给整数类型，会将小数部分丢掉，只能取整数部分，这会改变数字本来的值，注意是丢掉小数部分，而不是四舍五入  将一个整数赋值给小数类型，在小数点后面添加0就行，加几个无所谓 但是将小数赋值给整数类型时会“失真”，有些编译器会给出警告
     
+    // 浮点数结构体
+    typedef struct {
+        unsigned int nMant: 23; // 尾数部分
+        unsigned int nExp: 8; // 指数部分
+        unsigned int nSign: 1; // 符号部分
+    } FP_SIGNLE;
+    char strBin[33] = {0};
+    float ff = 19.625;
+    FP_SIGNLE *p = (FP_SIGNLE*)&ff;
+    itoa(p->nSign, strBin, 2);
+    printf("sign: %s\n",strBin);
+    itoa(p->nExp,strBin,2);
+    printf("exp: %s\n",strBin);
+    itoa(p->nMant,strBin,2);
+    printf("nMain: %s\n",strBin);
+    // 精度问题 对于十进制小数，小数部分转换成二进制使用“乘二取整法”，一个有限位数的小数不一定会转换成有限位数的二进制，只有位数是5的小数才有可能转换为有限位数的二进制，而float和double尾数部分都是有限的，即使能够转换成有限的二进制，也可能会超出尾数部分的长度，这样就必须“四舍五入”，所以就涉及到了精度的问题，因此，浮点数存储的不一定是正真实的小数，很可能是一个近似值
+    // 对于char类型，计算机在存储的时候存储的是字符的ASCII码，而所有的字符编码都是一个整数，因此从该角度看， 字符类型和整数类型在本质上没有什么区别,所有的ASCII码实际上存储都是整数
+    char q1 = '1';
+    char q2 = '$';
+    putchar(q1);putchar(q2);putchar('\n');
+    printf("%c,%c\n",q1,q2);
+    char q3 = 'E';
+    char q4 = 76;
+    printf("q3: %c,%d\n",q3,q3);
+    printf("q4, %c,%d\n",q4,q4);
+    
+    // 在c语言中，没有专门的字符串类型，只能用数组或者指针来间接地存储字符串
+    char str1[] = "这段是用数组的方式来存储字符串的";
+    char *str2 = "这段是用指针的方式来存储字符串的";
+    printf("%s\n%s\n",str1,str2);
     return 0;
 }
