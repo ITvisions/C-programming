@@ -337,12 +337,82 @@ int main(int argc, const char * argv[]) {
 //    }
 //    system("pause");
     
-    int a0,b0,max;
-    printf("two num:");
-    scanf("%d %d",&a0,&b0);
-    if (a0>b0) max = a0;
-    else max = b0;
-    printf("较大的值是：%d\n",max);
+//    int a0,b0,max;
+//    printf("two num:");
+//    scanf("%d %d",&a0,&b0);
+//    if (a0>b0) max = a0;
+//    else max = b0;
+//    printf("较大的值是：%d\n",max);
     
+    // 像1+2这样的有两个操作数，+是操作符，我们称这样的运算符为双目运算符（+-*/），有一个操作的称为单目远算符（++，--），三目运算符（只有？）
+    // 关系运算符的结果只有0或1，当条件成立时结果为1，不成立结果为0
+    char c20 = 'k';
+    int i1 = 1, j1 = 2, k1= 3;
+    float x10 = 3e5,ya2=0.85;
+    int result_1 = 'a' + 5 < c20 ,result_2 = x10 - 5.25 <= x10 + ya2;
+    printf("%d %d\n",result_1,-i1-2*j1 >= k1+1);
+    printf("%d %d\n",1<j1,result_2);
+    printf("%d %d\n",i1 + j1 + k1 == -2 * j1,k1 == j1 == i1 +5);
+    // 对于含多个关系运算符的表达式，如 k==j==i+5，根据运算符的左结合性，先计算k==j，该式不成立，其值为0，再计算0==i+5，也不成立，故表达式值为0
+    // 逻辑运算符
+    // 逻辑运算符中&&和｜|为左结合性，！为右结合性
+    // 一般称非零值为真，零值为假
+    // 逻辑运算符与其他运算符的优先级 赋值运算符（=）< &&和｜｜ < 关系运算符 < 算数运算符 < 非(!)
+//    int age1;
+//    float score1;
+//    printf("please enter your age and socre:");
+//    scanf("%d %f",&age1,&score1);
+//    if (age1 >= 18 && score1 >= 60) {
+//        printf("welcome!\n");
+//    } else {
+//        printf("sorry!");
+//    }
+    
+    // break 是C语言中的一个关键字，专门用于跳出 switch 语句。所谓“跳出”，是指一旦遇到 break，就不再执行 switch 中的任何语句，包括当前分支中的语句和其他分支中的语句；也就是说，整个 switch 执行结束了，接着会执行整个 switch 后面的代码
+//    int number1;
+//    printf("please enter a number");
+//    scanf("%d",&number1);
+//    switch (number1) {
+//        case 1:
+//            printf("monday");
+//            break;
+//        case 2:
+//            printf("tuesday");
+//            break;
+//        case 3:
+//            printf("wednesday");
+//            break;
+//        case 4:
+//            printf("thursday");
+//            break;
+//        case 5:
+//            printf("friday");
+//            break;
+//        case 6:
+//            printf("saturday");
+//            break;
+//        case 7:
+//            printf("sunday");
+//            break;
+//        default:
+//            printf("error");
+//            break;
+//    }
+    
+    //case 后面必须是一个整数，或者是结果为整数的表达式，但不能包含任何变量,其中字符和整数可以相互转换（例如'A'可以转换）
+    //default 不是必须的。当没有 default 时，如果所有 case 都匹配失败，那么就什么都不执行
+    // 条件运算符(?)是c语言中唯一的三目远算符
+    // 条件表达式应注意1.条件运算符的优先级低于关系运算符和算术运算符，但高于赋值符 2.条件运算符?和：是一对运算符，不能分开单独使用 3.条件运算符的结合方向是自右至左例： a>b ? a : c>d ? c : d; 应该理解为 a>b ? a : ( c>d ? c : d );
+//    int nu1 ,nu2;
+//    printf("please enter two integer number:");
+//    scanf("%d %d",&nu1,&nu2);
+//    printf("max = %d\n",nu1>nu2?nu1:nu2);
+    int base = 1 , sums = 0;
+    while (base <= 100) {
+        sums += base;
+        base++;
+    }
+    printf("sums = %d\n",sums);
+    // while 循环的整体思路是这样的：设置一个带有变量的循环条件，也即一个带有变量的表达式；在循环体中额外添加一条语句，让它能够改变循环条件中变量的值。这样，随着循环的不断执行，循环条件中变量的值也会不断变化，终有一个时刻，循环条件不再成立，整个循环就结束了
     return 0;
 }
