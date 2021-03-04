@@ -414,5 +414,78 @@ int main(int argc, const char * argv[]) {
     }
     printf("sums = %d\n",sums);
     // while 循环的整体思路是这样的：设置一个带有变量的循环条件，也即一个带有变量的表达式；在循环体中额外添加一条语句，让它能够改变循环条件中变量的值。这样，随着循环的不断执行，循环条件中变量的值也会不断变化，终有一个时刻，循环条件不再成立，整个循环就结束了
+    // 获取输入的字符串长度，回车结束
+//    int mp = 0;
+//    printf("please enter:");
+//    while (getchar() != '\n') {
+//        mp++;
+//    }
+//    printf("number of characters: %d\n",mp);
+    // do-while循环与while循环的不同在于：它会先执行“语句块”，然后再判断表达式是否为真，如果为真则继续循环；如果为假，则终止循环。因此，do-while 循环至少要执行一次“语句块”
+    // for循环
+    int sum2 = 0 ;
+    for (int as = 0; as <= 100 ; as++) {
+        sum2 += as;
+    }
+    printf("sum2=%d\n",sum2);
+    // 当 break 关键字用于 while、for 循环时，会终止循环而执行整个循环语句后面的代码。break 关键字通常和 if 语句一起使用，即满足条件时便跳出循环。
+    int sum3 = 0 , ii = 1;
+    while(1) {
+        sum3 += ii;
+        ii++;
+        if (ii > 100) {
+            break;
+        }
+    }
+    printf("sum3 = %d\n",sum3);
+    // 在多层循环中，一个 break 语句只向外跳一层
+    int i0 = 1, j0;
+    while (1) {
+        j0 = 1;
+        while (1) {
+            printf("%-4d",i0 * j0);
+            j0++;
+            if (j0>4) {
+                break; // 结束内层循环
+            }
+        }
+        printf("\n");
+        i0++;
+        if (i0 > 4) {
+            break; // 外层循环
+        }
+    }
+    // continue 语句的作用是跳过循环体中剩余的语句而强制进入下一次循环。continue语句只用在 while、for 循环中，常与 if 条件语句一起使用，判断条件是否成立
+//    char ca = 0;
+//    while (ca != '\n') {
+//        ca = getchar();
+//        if (ca == '4' || ca == '5') {
+//            continue;
+//        }
+//        putchar(ca);
+//    }
+    // break与continue的对比：break 用来结束所有循环，循环语句不再有执行的机会；continue 用来结束本次循环，直接跳到下一次循环，如果循环条件成立，还会继续循环。
+    // 循环嵌套
+    int y, v;
+    for (y = 1; y <= 4; y++) {
+        for (v = 1; v <= 4; v++) {
+            printf("%-4d",v * y);
+        }
+        printf("\n");
+    }
+    // 内层 for 每循环一次输出一个数据，而外层 for 每循环一次输出一行数据
+    int y0 ,v0;
+    for (y0=1; y0 <= 9; y0++) {
+        for (v0 = 1; v0 < y0; v0++) {
+            printf("%d * %d = %-2d ",v0,y0,y0*v0);
+        }
+        printf("\n");
+    }
+    // 除了 while 和 for，C语言中还有一个 goto 语句，它也能构成循环结构。不过由于 goto 语句很容易造成代码混乱，维护和阅读困难，饱受诟病，不被推荐，而且 goto 循环完全可以被其他循环取代，所以后来的很多编程语言都取消了 goto 语句
+    
+    // 数组
+    // 按数组元素的类型不同，数组又可分为数值数组、字符数组、指针数组、结构数组等各种类别
+    // int a[4]; 这样，就在内存中分配了4个int类型的内存空间，共 4×4=16 个字节，并为它们起了一个名字，叫a
+    // 把这样的一组数据的集合称为数组（Array），它所包含的每一个数据叫做数组元素（Element），所包含的数据的个数称为数组长度（Length），例如int a[4];就定义了一个长度为4的整型数组，名字是a
     return 0;
 }
