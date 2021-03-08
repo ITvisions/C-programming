@@ -8,6 +8,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <string.h>
 #include "itoa.h"
 
 int c1;
@@ -520,27 +521,157 @@ int main(int argc, const char * argv[]) {
     // 二维数组在概念上是二维的，但在内存中是连续存放的；换句话说，二维数组的各个元素是相互挨着的，彼此之间没有缝隙，在线性内存中存二维数组的两种方式：
     // 1. 一种是按行排列，即放完一行之后再放第二行 2. 另一种是按咧排列，存放完一列之后再放第二列、
     // 在c语言中，数组是按行排列的
-    int l,k;// 二维数组下标
-    int sum = 0; // 当前科目的总成绩
-    int average; // 总平均分
-    int arr6[3]; // 各科平均分
-    int arr7[5][3]; //用来保存各个同学各科成绩的二维数组
-    printf("input score: \n");
-    for (l=0; l<3; l++) {
-        for (k=0; k<5; k++) {
-            scanf("%d",&arr7[k][l]);
-            sum+=arr7[k][l];
-        }
-        arr6[l] = sum / 5;
-        sum = 0;
-    }
-    average = (arr6[0] + arr6[1] + arr6[2]) / 3;
-    printf("Math average: %d,C averafe: %d, Java average: %d\n",arr6[0],arr6[1],arr6[2]);
-    printf("Total average: %d\n",average);
+//    int l,k;// 二维数组下标
+//    int sum = 0; // 当前科目的总成绩
+//    int average; // 总平均分
+//    int arr6[3]; // 各科平均分
+//    int arr7[5][3]; //用来保存各个同学各科成绩的二维数组
+//    printf("input score: \n");
+//    for (l=0; l<3; l++) {
+//        for (k=0; k<5; k++) {
+//            scanf("%d",&arr7[k][l]);
+//            sum+=arr7[k][l];
+//        }
+//        arr6[l] = sum / 5;
+//        sum = 0;
+//    }
+//    average = (arr6[0] + arr6[1] + arr6[2]) / 3;
+//    printf("Math average: %d,C averafe: %d, Java average: %d\n",arr6[0],arr6[1],arr6[2]);
+//    printf("Total average: %d\n",average);
 //    二维数组的初始化可以按行分段赋值，也可按行连续赋值
 //    int arr8[3][2] = {{1,2},{1,3},{4,6}};
 //    int arr9[2][2] = {1,2,2,4};
     // 数组的初始化 1. 可以只对部分元素赋值，未赋值的元素自动取“零”值
-    // 如果对全部元素赋值，那么第一维的长度可以不给出
+    // 如果对全部元素赋值，那么第一维的长度可以不给出，例如
+//    int a[3][3] = {1, 2, 3, 4, 5, 6, 7, 8, 9};可以写成int a[][3] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+    //二维数组可以看作是由一维数组嵌套而成的；如果一个数组的每个元素又是一个数组，那么它就是二维数组。当然，前提是各个元素的类型必须相同。根据这样的分析，一个二维数组也可以分解为多个一维数组，C语言允许这种分解。
+    // 二维数组a[3][4]可分解为三个一维数组，它们的数组名分别为 a[0]、a[1]、a[2]。这三个一维数组可以直接拿来使用。这三个一维数组都有 4 个元素，比如，一维数组 a[0] 的元素为 a[0][0]、a[0][1]、a[0][2]、a[0][3]。
+    // c语言中判断数组中是否含有某个元素
+    // 对无序数组的查询，遍历数组中的每个元素
+//    int arr8[6] = {3,7,2,456,43,65,};
+//    int ind,numd,thisindex = -1;
+//    printf("please enter integer number:");
+//    scanf("%d",&numd);
+//    for (ind = 0; ind < 10; ind++) {
+//        if (arr8[ind] == numd) {
+//            thisindex = ind;
+//            break;
+//        }
+//    }
+//    if (thisindex < 0) {
+//        printf("%d is not in the array\n",numd);
+//    } else {
+//        printf("%d is in the array,its index is %d\n",numd,thisindex);
+//    }
+    // 对有序数组的查询
+//    int arr9[6] = {2,4,6,9,12,23};
+//    int ind2,numd2,thisindex2 = -1;
+//    printf("please enter integer number:");
+//    scanf("%d",&numd2);
+//    for (ind2=0; ind2 < 10; ind2++) {
+//        if (arr9[ind2] == numd2) {
+//            thisindex2 = ind2;
+//            break;
+//        } else if(arr9[ind2] > numd2) {
+//            break; // 当 nums[i] > num 时，i 后边的元素也都大于 num 了，num 肯定不在数组中了，就没有必要再继续比较了，终止循环
+//        }
+//    }
+//    if (thisindex2 < 0) {
+//        printf("%d is not in array\n",numd2);
+//    } else {
+//        printf("%d is in the array,it index is %d\n",numd2,thisindex2);
+//    }
+    // 用来存放字符的数组称为字符数组
+    // char c[20]={'c', '  ', 'p', 'r', 'o', 'g', 'r', 'a','m'};  // 给部分数组元素赋值
+    // char d[]={'c', ' ', 'p', 'r', 'o', 'g', 'r', 'a', 'm' };  //对全体元素赋值时可以省去长度
+    // 在C语言中，没有专门的字符串变量，没有string类型，通常就用一个字符数组来存放一个字符串,是一系列字符的集合
+    // c语言中可以直接将字符串赋值给字符数组
+//    char str3[30] = {"www.baidu.com"};
+//    char str4[30] = "www.baidu.com"; // 也可以不指定长度
+    // 符数组只有在定义时才能将整个字符串一次性地赋值给它，一旦定义完了，就只能一个字符一个字符地赋值了
+    // char str[7];
+    // str = "abc123";  //错误
+    // 正确
+//    str[0] = 'a'; str[1] = 'b'; str[2] = 'c';
+//    str[3] = '1'; str[4] = '2'; str[5] = '3';
+    // 字符串结束标志
+    // 字符串是一系列连续的字符的组合，要想在内存中定位一个字符串，除了要知道它的开头，还要知道它的结尾，只要知道它名字就能找到开头
+    // 在C语言中，字符串总是以'\0'作为结尾，所以'\0'也被称为字符串结束标志，或者字符串结束符
+    // C语言在处理字符串时，会从前往后逐个扫描字符，一旦遇到'\0'就认为到达了字符串的末尾，就结束处理。'\0'至关重要，没有'\0'就意味着永远也到达不了字符串的结尾
+    // 由" "包围的字符串会自动在末尾添加'\0'，例如，"abc123"从表面看起来只包含了 6 个字符，其实不然，C语言会在最后隐式地添加一个'\0'
+    // 注意： 逐个字符地给数组赋值并不会自动添加'\0' ，例如 char str[] = {'a', 'b', 'c'};数组 str 的长度为 3，而不是 4，因为最后没有'\0'
+    // "abc123"看起来只包含了 6 个字符，我们却将 str 的长度定义为 7，就是为了能够容纳最后的'\0'。如果将 str 的长度定义为 6，它就无法容纳'\0'了。
+    // 在函数内部定义的变量、数组、结构体、共用体等都称为局部数据。在很多编译器下，局部数据的初始值都是随机的、无意义的，而不是我们通常认为的“零”值，所以如果是对元素一个一个的进行赋值，一定要记住在后面手动添加'\0'
+    char strs[30];
+    char c9;
+    int ind3;
+    for (c9 = 65,ind3 = 0; c9 <= 90; c9++,ind3++) {
+        strs[ind3] = c9;
+    }
+    strs[ind3] = 0;
+    printf("%s\n",strs);
+    // 专业写法：将所有元素都初始化为0，或者说'\0'
+    // 如果只初始化部分数组元素，那么剩余的数组元素也会自动初始化为“零”值，所以我们只需要将 str 的第 0 个元素赋值为 0，剩下的元素就都是 0 了
+    char strs2[30] = {0};
+    char c10;
+    int ind4;
+    for (c10 = 65, ind4 = 0; c10 <= 90; c10++,ind4++) {
+        strs2[ind4] = c10;
+    }
+    printf("%s\n",strs2);
+    // 字符串长度就是字符串包含了多少个字符（不包括最后的结束符'\0'）。例如"abc"的长度是 3，而不是 4
+    // C语言中，使用string.h头文件中的 strlen() 函数来求字符串的长度
+    char strs3[] = "www.hdisahfidsha.com";
+    long len = strlen(strs3);
+    printf("the length of strs3 is %ld\n",len);
+    // 在C语言中，有两个函数可以在控制台（显示器）上输出字符串，它们分别是:
+    // 1. puts()：输出字符串并自动换行，该函数只能输出字符串
+    // 2. printf()：通过格式控制符%s输出字符串，不能自动换行。除了字符串，printf() 还能输出其他类型的数据。
+    // 在C语言中，有两个函数可以让用户从键盘上输入字符串，它们分别是：
+    // 1. scanf()：通过格式控制符%s输入字符串。除了字符串，scanf() 还能输入其他类型的数据, 遇到空格就认为当前字符串结束了,无法读取含有空格的字符串
+    // 2. gets()：直接输入字符串，并且只能输入字符串,认为空格也是字符串的一部分，只有遇到回车键时才认为字符串输入结束
+    // 注意： scanf() 在读取数据时需要的是数据的地址，这一点是恒定不变的，对于 int、char、float 等类型的变量都要在前边添加&以获取它们的地址，字符串名字或者数组名字在使用的过程中一般都会转换为地址，所以再添加&就是多此一举，甚至会导致错误了
+    // int、char、float 等类型的变量用于 scanf() 时都要在前面添加&，而数组或者字符串用于 scanf() 时不用添加&
+    // 以下功能都是 gets() 不具备的：
+    // 1. scanf()可以控制读取字符串的数目
+    // 2. scanf()可以只读取指定的字符
+    // 3. scanf()可以不读区某些字符
+    // 4. scanf()可以把读取到的字符丢弃
+    // scanf("%[^\n]%*c", str);表示读到字符‘\n’停止读取，并且读入一个字符但是不赋值给变量
+    // scanf()函数是通用终端格式化输入函数 调用格式为: scanf("<格式化字符串>"，<地址表>);scanf()函数返回成功赋值的数据项数，出错时则返回EOF
+    // 1. 格式化说明符：%n 至此已读入值的等价字符数 %[] 扫描字符集合 %% 读%符号
+    // 1. * 亦可用于格式中, (即 %*d 和 %*s) 加了星号 (*) 表示跳过此数据不读入. (也就是不把此数据读入参数中)
+    // 2. {a|b|c}表示a,b,c中选一，[d],表示可以有d也可以没有d。
+    // 3. width表示读取宽度
+    // 4. 参数的size: 常用的有hh表示单字节size，h表示2字节 size
+    // 5.空白字符会使scanf()函数在读操作中略去输入中的一个或多个空白字符，空白符可以是space,tab,newline等，直到第一个非空白符出现为止
+    
+    // c语言字符串处理函数
+    // C语言提供了丰富的字符串处理函数，可以对字符串进行输入、输出、合并、修改、比较、转换、复制、搜索等操作，使用这些现成的函数可以大大减轻我们的编程负担
+    // 1. 字符串连接函数 strcat()，意思是把两个字符串拼接在一起，语法格式 strcat(arrayName1, arrayName2);strcat() 将把 arrayName2 连接到 arrayName1 后面，并删除原来 arrayName1 最后的结束标志'\0'。意味着arrayName1 必须足够长，要能够同时容纳 arrayName1 和 arrayName2，否则会越界（超出范围）。strcat() 的返回值为 arrayName1 的地址。
+//    char strn[80] = "The ULL is";
+//    char strn2[30];
+//    printf("input a url:");
+//    gets(strn2);
+//    strcat(strn, strn2);
+//    puts(strn);
+    // 字符串复制函数 strcpy(),即将字符串从一个地方复制到另外一个地方，语法格式为：strcpy(arrayName1, arrayName2);strcpy() 会把 arrayName2 中的字符串拷贝到 arrayName1 中，字符串结束标志'\0'也一同拷贝,strcpy() 要求 arrayName1 要有足够的长度，否则不能全部装入所拷贝的字符串
+    char strn3[50] = "<<c语言牛逼>>";
+    char strn4[50] = "java牛逼";
+    strcpy(strn3,strn4);
+    printf("strn3 = %s\n",strn3);
+    // 字符串比较函数 strcmp(),语法格式为：strcmp(arrayName1, arrayName2);arrayName1 和 arrayName2 是需要比较的两个字符串.字符本身没有大小之分，strcmp() 以各个字符对应的 ASCII 码值进行比较.strcmp() 从两个字符串的第 0 个字符开始比较，如果它们相等，就继续比较下一个字符，直到遇见不同的字符，或者到字符串的末尾。
+    // 若 arrayName1 和 arrayName2 相同，则返回0；若 arrayName1 大于 arrayName2，则返回大于 0 的值；若 arrayName1 小于 arrayName2，则返回小于0 的值
+    char strn5[] = "abCdef";
+    char strn6[] = "abCdef";
+    char strn7[] = "abcd";
+    char strn8[] = "ABCDEF";
+    printf("相等的: %d\n",strcmp(strn5, strn6));
+    printf("大于的: %d\n",strcmp(strn5, strn8)); // 小写字母的ascII码大于大写字母的acsII码
+    printf("小于的: %d\n",strcmp(strn5, strn7));
+    // c语言中不允许动态数组类型。例如： int n;scanf("%d",&n);int a[n]; 用变量表示长度，想对数组的大小作动态说明， 这是错误的
+//    但是在实际的编程中，往往会发生这种情况， 即所需的内存空间取决于实际输入的数据，而无法预先确定。对于这种问题，用数组的办法很难解决。为了解决上述问题，C语言提供了一些内存管理函数，这些内存管理函数可以按需要动态地分配内存空间，也可把不再使用的空间回收待用，为有效地利用内存资源提供了手段。其它文献中所提到的"动态数组",指的就是利用内存的申请和释放函数,在程序的运行过程中，根据实际需要指定数组的大小.其本质是一个指向数组的指针变量.常用的内存管理函数有以下三个：
+//    1. 分配内存空间函数malloc 调用形式： (类型说明符*) malloc (size) 功能：在内存的动态存储区中分配一块长度为"size" 字节的连续区域。函数的返回值为该区域的首地址 “类型说明符”表示把该区域用于何种数据类型。(类型说明符*)表示把返回值强制转换为该类型指针。“size”是一个无符号数。例如： pc=(char *) malloc (100); 表示分配100个字节的内存空间，并强制转换为字符数组类型， 函数的返回值为指向该字符数组的指针， 把该指针赋予指针变量pc
+//    2.分配内存空间函数 calloc 调用形式： (类型说明符*)calloc(n,size) 功能：
     return 0;
 }
