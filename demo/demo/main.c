@@ -671,7 +671,45 @@ int main(int argc, const char * argv[]) {
     printf("小于的: %d\n",strcmp(strn5, strn7));
     // c语言中不允许动态数组类型。例如： int n;scanf("%d",&n);int a[n]; 用变量表示长度，想对数组的大小作动态说明， 这是错误的
 //    但是在实际的编程中，往往会发生这种情况， 即所需的内存空间取决于实际输入的数据，而无法预先确定。对于这种问题，用数组的办法很难解决。为了解决上述问题，C语言提供了一些内存管理函数，这些内存管理函数可以按需要动态地分配内存空间，也可把不再使用的空间回收待用，为有效地利用内存资源提供了手段。其它文献中所提到的"动态数组",指的就是利用内存的申请和释放函数,在程序的运行过程中，根据实际需要指定数组的大小.其本质是一个指向数组的指针变量.常用的内存管理函数有以下三个：
-//    1. 分配内存空间函数malloc 调用形式： (类型说明符*) malloc (size) 功能：在内存的动态存储区中分配一块长度为"size" 字节的连续区域。函数的返回值为该区域的首地址 “类型说明符”表示把该区域用于何种数据类型。(类型说明符*)表示把返回值强制转换为该类型指针。“size”是一个无符号数。例如： pc=(char *) malloc (100); 表示分配100个字节的内存空间，并强制转换为字符数组类型， 函数的返回值为指向该字符数组的指针， 把该指针赋予指针变量pc
-//    2.分配内存空间函数 calloc 调用形式： (类型说明符*)calloc(n,size) 功能：
+//    1. 分配内存空间函数malloc 调用形式： (类型说明符*) malloc (size) 功能：在内存的动态存储区中分配一块长度为"size" 字节的连续区域。函数的返回值为该区域的首地址 “类型说明符”表示把该区域用于何种数据类型。(类型说明符*)表示把返回值强制转换为该类型指针。“size”是一个无符号数。例如： pc=(char *) malloc (100); 表示分配100个字节的内存空间，并强制转换为字符数组类型， 函数的返回值为指向该字符数组的指针， 把该指针赋予指针变量pc,分配成功则返回指针地址，分配失败则返回NULL
+//    2.分配内存空间函数 calloc 调用形式： (类型说明符*)calloc(n,size)
+    // 在创建动态数组的过程中我们要遵循一个原则，那就是在创建的时候从外层往里层，逐层创建；而释放的时候从里层往外层，逐层释放
+    // 动态创建一维数组
+    int k2,z;
+    int *array;
+    printf("please enter single array:");
+    scanf("%d",&k2);
+    array = (int *)calloc(k2, sizeof(int));
+    for (z = 0; z < k2 ; z++) {
+        printf("%d\t",array[z]);
+    }
+    printf("\n");
+    for (z = 0; z < k2 ; z++) {
+        array[z] = z+1;
+        printf("%d\t",array[z]);
+    }
+    printf("\n");
+    free(array);
+    // 动态创建二维数组
+    int k3,z1;
+    printf("请输入动态二维数组的第一个维度：");
+    scanf("%d",&k3);
+    printf("请输入动态二维数组的第二个维度：");
+    scanf("%d",&z1);
+    int **array1 = (int **)calloc(k3, sizeof(int));
+    for (int inde = 0; inde < k3; inde++) {
+        array1[inde] = (int*)calloc(z1, sizeof(int));
+    }
+    for (int inde = 0; inde < k3; inde++) {
+        for (int inde2 = 0; inde2 < z1; inde2++) {
+            array1[inde][inde2] = inde*z1+inde2+1;
+            printf("%d\t",array1[inde][inde2]);
+        }
+        printf("\n");
+    }
+    for (int z2 = 0; z2 < k3 ; z2++) {
+        free(array1[z2]);
+    }
+    free(array1);
     return 0;
 }
