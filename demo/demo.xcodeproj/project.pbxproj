@@ -10,6 +10,11 @@
 		BF285C7B25E3FA90007B3BF9 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = BF285C7A25E3FA90007B3BF9 /* main.c */; };
 		BF285C8425E6ADC3007B3BF9 /* itoa.c in Sources */ = {isa = PBXBuildFile; fileRef = BF285C8325E6ADC3007B3BF9 /* itoa.c */; };
 		BF65219A25EAB9EC009B33CB /* getpwd.c in Sources */ = {isa = PBXBuildFile; fileRef = BF65219925EAB9EC009B33CB /* getpwd.c */; };
+		BFF7C4E926102ED2001B2442 /* myprint.c in Sources */ = {isa = PBXBuildFile; fileRef = BFF7C4E826102ED2001B2442 /* myprint.c */; };
+		BFF7C4ED2610334F001B2442 /* dubble_sort.c in Sources */ = {isa = PBXBuildFile; fileRef = BFF7C4EC2610334F001B2442 /* dubble_sort.c */; };
+		BFF7C4F126103C52001B2442 /* select_sort.c in Sources */ = {isa = PBXBuildFile; fileRef = BFF7C4F026103C52001B2442 /* select_sort.c */; };
+		BFF7C4F52610570D001B2442 /* insert_sort.c in Sources */ = {isa = PBXBuildFile; fileRef = BFF7C4F42610570D001B2442 /* insert_sort.c */; };
+		BFF7C4F926106370001B2442 /* shell_sort.c in Sources */ = {isa = PBXBuildFile; fileRef = BFF7C4F826106370001B2442 /* shell_sort.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +36,16 @@
 		BF285C8325E6ADC3007B3BF9 /* itoa.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = itoa.c; sourceTree = "<group>"; };
 		BF65219825EAB9EC009B33CB /* getpwd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = getpwd.h; sourceTree = "<group>"; };
 		BF65219925EAB9EC009B33CB /* getpwd.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = getpwd.c; sourceTree = "<group>"; };
+		BFF7C4E726102ED2001B2442 /* myprint.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = myprint.h; sourceTree = "<group>"; };
+		BFF7C4E826102ED2001B2442 /* myprint.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = myprint.c; sourceTree = "<group>"; };
+		BFF7C4EB2610334F001B2442 /* dubble_sort.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dubble_sort.h; sourceTree = "<group>"; };
+		BFF7C4EC2610334F001B2442 /* dubble_sort.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = dubble_sort.c; sourceTree = "<group>"; };
+		BFF7C4EF26103C52001B2442 /* select_sort.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = select_sort.h; sourceTree = "<group>"; };
+		BFF7C4F026103C52001B2442 /* select_sort.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = select_sort.c; sourceTree = "<group>"; };
+		BFF7C4F32610570D001B2442 /* insert_sort.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = insert_sort.h; sourceTree = "<group>"; };
+		BFF7C4F42610570D001B2442 /* insert_sort.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = insert_sort.c; sourceTree = "<group>"; };
+		BFF7C4F726106370001B2442 /* shell_sort.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = shell_sort.h; sourceTree = "<group>"; };
+		BFF7C4F826106370001B2442 /* shell_sort.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = shell_sort.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +83,16 @@
 				BF285C8325E6ADC3007B3BF9 /* itoa.c */,
 				BF65219825EAB9EC009B33CB /* getpwd.h */,
 				BF65219925EAB9EC009B33CB /* getpwd.c */,
+				BFF7C4E726102ED2001B2442 /* myprint.h */,
+				BFF7C4E826102ED2001B2442 /* myprint.c */,
+				BFF7C4EB2610334F001B2442 /* dubble_sort.h */,
+				BFF7C4EC2610334F001B2442 /* dubble_sort.c */,
+				BFF7C4EF26103C52001B2442 /* select_sort.h */,
+				BFF7C4F026103C52001B2442 /* select_sort.c */,
+				BFF7C4F32610570D001B2442 /* insert_sort.h */,
+				BFF7C4F42610570D001B2442 /* insert_sort.c */,
+				BFF7C4F726106370001B2442 /* shell_sort.h */,
+				BFF7C4F826106370001B2442 /* shell_sort.c */,
 			);
 			path = demo;
 			sourceTree = "<group>";
@@ -129,8 +154,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF65219A25EAB9EC009B33CB /* getpwd.c in Sources */,
+				BFF7C4E926102ED2001B2442 /* myprint.c in Sources */,
 				BF285C8425E6ADC3007B3BF9 /* itoa.c in Sources */,
+				BFF7C4F126103C52001B2442 /* select_sort.c in Sources */,
+				BFF7C4F926106370001B2442 /* shell_sort.c in Sources */,
+				BFF7C4ED2610334F001B2442 /* dubble_sort.c in Sources */,
 				BF285C7B25E3FA90007B3BF9 /* main.c in Sources */,
+				BFF7C4F52610570D001B2442 /* insert_sort.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

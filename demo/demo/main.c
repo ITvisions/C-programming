@@ -10,6 +10,11 @@
 #include <unistd.h>
 #include <string.h>
 #include "itoa.h"
+//#include "myprint.h"
+#include "dubble_sort.h"
+#include "select_sort.h"
+#include "insert_sort.h"
+#include "shell_sort.h"
 
 int c1;
 float c2;
@@ -675,41 +680,95 @@ int main(int argc, const char * argv[]) {
 //    2.分配内存空间函数 calloc 调用形式： (类型说明符*)calloc(n,size)
     // 在创建动态数组的过程中我们要遵循一个原则，那就是在创建的时候从外层往里层，逐层创建；而释放的时候从里层往外层，逐层释放
     // 动态创建一维数组
-    int k2,z;
-    int *array;
-    printf("please enter single array:");
-    scanf("%d",&k2);
-    array = (int *)calloc(k2, sizeof(int));
-    for (z = 0; z < k2 ; z++) {
-        printf("%d\t",array[z]);
-    }
-    printf("\n");
-    for (z = 0; z < k2 ; z++) {
-        array[z] = z+1;
-        printf("%d\t",array[z]);
-    }
-    printf("\n");
-    free(array);
+//    int k2,z;
+//    int *array;
+//    printf("please enter single array:");
+//    scanf("%d",&k2);
+//    array = (int *)calloc(k2, sizeof(int));
+//    for (z = 0; z < k2 ; z++) {
+//        printf("%d\t",array[z]);
+//    }
+//    printf("\n");
+//    for (z = 0; z < k2 ; z++) {
+//        array[z] = z+1;
+//        printf("%d\t",array[z]);
+//    }
+//    printf("\n");
+//    free(array);
     // 动态创建二维数组
-    int k3,z1;
-    printf("请输入动态二维数组的第一个维度：");
-    scanf("%d",&k3);
-    printf("请输入动态二维数组的第二个维度：");
-    scanf("%d",&z1);
-    int **array1 = (int **)calloc(k3, sizeof(int));
-    for (int inde = 0; inde < k3; inde++) {
-        array1[inde] = (int*)calloc(z1, sizeof(int));
-    }
-    for (int inde = 0; inde < k3; inde++) {
-        for (int inde2 = 0; inde2 < z1; inde2++) {
-            array1[inde][inde2] = inde*z1+inde2+1;
-            printf("%d\t",array1[inde][inde2]);
+//    int k3,z1;
+//    printf("请输入动态二维数组的第一个维度：");
+//    scanf("%d",&k3);
+//    printf("请输入动态二维数组的第二个维度：");
+//    scanf("%d",&z1);
+//    int **array1 = (int **)calloc(k3, sizeof(int));
+//    for (int inde = 0; inde < k3; inde++) {
+//        array1[inde] = (int*)calloc(z1, sizeof(int));
+//    }
+//    for (int inde = 0; inde < k3; inde++) {
+//        for (int inde2 = 0; inde2 < z1; inde2++) {
+//            array1[inde][inde2] = inde*z1+inde2+1;
+//            printf("%d\t",array1[inde][inde2]);
+//        }
+//        printf("\n");
+//    }
+//    for (int z2 = 0; z2 < k3 ; z2++) {
+//        free(array1[z2]);
+//    }
+//    free(array1);
+    // 对数组元素进行排序
+    // 对数组元素进行排序的方法有很多种，比如冒泡排序、归并排序、选择排序、插入排序、快速排序，shell排序、分组排序、基数排序、桶（箱）排序、堆排序、计数排序等
+    // 冒泡排序
+    int arrq[10] = {3,2,5,2,43,6,9,54,57,32};
+    int ai,aj,at;
+    for (ai = 0; ai < 10 - 1; ai++) {
+        for (aj = 0; aj < 10 - ai - 1; aj++) {
+            if (arrq[aj] > arrq[aj + 1]) {
+                at = arrq[aj];
+                arrq[aj] = arrq[aj + 1];
+                arrq[aj + 1] = at;
+            }
         }
-        printf("\n");
     }
-    for (int z2 = 0; z2 < k3 ; z2++) {
-        free(array1[z2]);
+    for (ai = 0; ai < 10; ai++) {
+        printf("%d ",arrq[ai]);
     }
-    free(array1);
-    return 0;
+    printf("\n");
+    // 优化算法
+    int arrq1[10] ={43,432,54,64,88,6,65,93,23,90};
+    int ai1,aj1,at1,isSorted;
+    for (ai1 = 0; ai1 < 10 -1; ai1++) {
+        isSorted = 1;
+        for (aj1 = 0; aj1<10-1-ai1; aj1++) {
+            if (arrq1[aj1] > arrq1[aj1 + 1]) {
+                at1 = arrq1[aj1];
+                arrq1[aj1] = arrq1[aj1+1];
+                arrq1[aj1+1] = at1;
+                isSorted = 0;
+            }
+        }
+        if(isSorted) break;
+    }
+    for (ai1=0; ai1 < 10 ; ai1++) {
+        printf("%d ",arrq1[ai1]);
+    }
+    printf("\n");
+    
+    printf("************\n");
+    // 冒泡排序,时间复杂度O(n^2)  -> O(n^2/2 ~ n^2)
+    int test_ar[10] = {10,43,3,23,21,2,43,32,432,43};
+    printf("dubble_sort:\n");
+    dubble_sort(test_ar,10);
+    // 选择排序,时间复杂度O(n^2/2 + (n-1))
+    int test_ar2[10] = {10,43,3,23,21,2,43,32,432,43};
+    printf("select_sort: \n");
+    select_sort(test_ar2 , 10);
+    // 插入排序，时间复杂度O(n^2 ~ 2n)
+    int test_ar3[10] = {10,43,3,23,21,2,43,32,432,43};
+    printf("insert_sort:\n");
+    insert_sort(test_ar3, 10);
+    // shell排序
+    int test_ar4[10] = {10,43,3,23,21,2,43,32,432,43};
+    printf("shell_sort: \n");
+    shell_sort(test_ar4, 10);
 }
