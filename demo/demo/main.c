@@ -15,6 +15,8 @@
 #include "select_sort.h"
 #include "insert_sort.h"
 #include "shell_sort.h"
+#include "order_search.h"
+#include "binary_search.h"
 
 int c1;
 float c2;
@@ -771,4 +773,13 @@ int main(int argc, const char * argv[]) {
     int test_ar4[10] = {10,43,3,23,21,2,43,32,432,43};
     printf("shell_sort: \n");
     shell_sort(test_ar4, 10);
+    
+    // 搜索
+    int test_ar5[10] = {10,43,3,23,21,2,43,32,432,43};
+    int lengths = sizeof(test_ar5) / sizeof(int);
+    order_search(test_ar5, lengths, 2);
+    order_search(test_ar5, lengths, 100);
+    // 折半查找的前提是已经拍好序了，一般不在链表中使用折半查找，反而可能会降低效率
+    int lengths2 = sizeof(test_ar4) / sizeof(int);
+    binary_search(test_ar4,lengths2,43);
 }

@@ -15,6 +15,8 @@
 		BFF7C4F126103C52001B2442 /* select_sort.c in Sources */ = {isa = PBXBuildFile; fileRef = BFF7C4F026103C52001B2442 /* select_sort.c */; };
 		BFF7C4F52610570D001B2442 /* insert_sort.c in Sources */ = {isa = PBXBuildFile; fileRef = BFF7C4F42610570D001B2442 /* insert_sort.c */; };
 		BFF7C4F926106370001B2442 /* shell_sort.c in Sources */ = {isa = PBXBuildFile; fileRef = BFF7C4F826106370001B2442 /* shell_sort.c */; };
+		BFF7C4FD26107AFD001B2442 /* order_search.c in Sources */ = {isa = PBXBuildFile; fileRef = BFF7C4FC26107AFD001B2442 /* order_search.c */; };
+		BFF7C501261083BB001B2442 /* binary_search.c in Sources */ = {isa = PBXBuildFile; fileRef = BFF7C500261083BB001B2442 /* binary_search.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -46,6 +48,10 @@
 		BFF7C4F42610570D001B2442 /* insert_sort.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = insert_sort.c; sourceTree = "<group>"; };
 		BFF7C4F726106370001B2442 /* shell_sort.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = shell_sort.h; sourceTree = "<group>"; };
 		BFF7C4F826106370001B2442 /* shell_sort.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = shell_sort.c; sourceTree = "<group>"; };
+		BFF7C4FB26107AFD001B2442 /* order_search.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = order_search.h; sourceTree = "<group>"; };
+		BFF7C4FC26107AFD001B2442 /* order_search.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = order_search.c; sourceTree = "<group>"; };
+		BFF7C4FF261083BB001B2442 /* binary_search.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = binary_search.h; sourceTree = "<group>"; };
+		BFF7C500261083BB001B2442 /* binary_search.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = binary_search.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +99,10 @@
 				BFF7C4F42610570D001B2442 /* insert_sort.c */,
 				BFF7C4F726106370001B2442 /* shell_sort.h */,
 				BFF7C4F826106370001B2442 /* shell_sort.c */,
+				BFF7C4FB26107AFD001B2442 /* order_search.h */,
+				BFF7C4FC26107AFD001B2442 /* order_search.c */,
+				BFF7C4FF261083BB001B2442 /* binary_search.h */,
+				BFF7C500261083BB001B2442 /* binary_search.c */,
 			);
 			path = demo;
 			sourceTree = "<group>";
@@ -159,6 +169,8 @@
 				BFF7C4F126103C52001B2442 /* select_sort.c in Sources */,
 				BFF7C4F926106370001B2442 /* shell_sort.c in Sources */,
 				BFF7C4ED2610334F001B2442 /* dubble_sort.c in Sources */,
+				BFF7C501261083BB001B2442 /* binary_search.c in Sources */,
+				BFF7C4FD26107AFD001B2442 /* order_search.c in Sources */,
 				BF285C7B25E3FA90007B3BF9 /* main.c in Sources */,
 				BFF7C4F52610570D001B2442 /* insert_sort.c in Sources */,
 			);
