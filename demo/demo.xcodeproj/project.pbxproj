@@ -9,7 +9,15 @@
 /* Begin PBXBuildFile section */
 		BF285C7B25E3FA90007B3BF9 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = BF285C7A25E3FA90007B3BF9 /* main.c */; };
 		BF285C8425E6ADC3007B3BF9 /* itoa.c in Sources */ = {isa = PBXBuildFile; fileRef = BF285C8325E6ADC3007B3BF9 /* itoa.c */; };
+		BF59C7DF2619572700831561 /* strcmp_alias.c in Sources */ = {isa = PBXBuildFile; fileRef = BF59C7DE2619572700831561 /* strcmp_alias.c */; };
 		BF65219A25EAB9EC009B33CB /* getpwd.c in Sources */ = {isa = PBXBuildFile; fileRef = BF65219925EAB9EC009B33CB /* getpwd.c */; };
+		BF8EB50B26196A2A0001FB0C /* prime.c in Sources */ = {isa = PBXBuildFile; fileRef = BF8EB50A26196A2A0001FB0C /* prime.c */; };
+		BF8EB50F261970190001FB0C /* factorial.c in Sources */ = {isa = PBXBuildFile; fileRef = BF8EB50E261970190001FB0C /* factorial.c */; };
+		BF8EB513261970AC0001FB0C /* factorial_sum.c in Sources */ = {isa = PBXBuildFile; fileRef = BF8EB512261970AC0001FB0C /* factorial_sum.c */; };
+		BF8EB517261988F40001FB0C /* areaV.c in Sources */ = {isa = PBXBuildFile; fileRef = BF8EB516261988F40001FB0C /* areaV.c */; };
+		BF8EB51B261992CE0001FB0C /* gcd.c in Sources */ = {isa = PBXBuildFile; fileRef = BF8EB51A261992CE0001FB0C /* gcd.c */; };
+		BF8EB51F261995580001FB0C /* strchar.c in Sources */ = {isa = PBXBuildFile; fileRef = BF8EB51E261995580001FB0C /* strchar.c */; };
+		BF8EB52326199FAA0001FB0C /* myfactorials.c in Sources */ = {isa = PBXBuildFile; fileRef = BF8EB52226199FAA0001FB0C /* myfactorials.c */; };
 		BFF7C4E926102ED2001B2442 /* myprint.c in Sources */ = {isa = PBXBuildFile; fileRef = BFF7C4E826102ED2001B2442 /* myprint.c */; };
 		BFF7C4ED2610334F001B2442 /* dubble_sort.c in Sources */ = {isa = PBXBuildFile; fileRef = BFF7C4EC2610334F001B2442 /* dubble_sort.c */; };
 		BFF7C4F126103C52001B2442 /* select_sort.c in Sources */ = {isa = PBXBuildFile; fileRef = BFF7C4F026103C52001B2442 /* select_sort.c */; };
@@ -36,8 +44,24 @@
 		BF285C7A25E3FA90007B3BF9 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		BF285C8225E6AD64007B3BF9 /* itoa.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = itoa.h; sourceTree = "<group>"; };
 		BF285C8325E6ADC3007B3BF9 /* itoa.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = itoa.c; sourceTree = "<group>"; };
+		BF59C7DD2619572700831561 /* strcmp_alias.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = strcmp_alias.h; sourceTree = "<group>"; };
+		BF59C7DE2619572700831561 /* strcmp_alias.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = strcmp_alias.c; sourceTree = "<group>"; };
 		BF65219825EAB9EC009B33CB /* getpwd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = getpwd.h; sourceTree = "<group>"; };
 		BF65219925EAB9EC009B33CB /* getpwd.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = getpwd.c; sourceTree = "<group>"; };
+		BF8EB50926196A2A0001FB0C /* prime.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = prime.h; sourceTree = "<group>"; };
+		BF8EB50A26196A2A0001FB0C /* prime.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = prime.c; sourceTree = "<group>"; };
+		BF8EB50D261970190001FB0C /* factorial.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = factorial.h; sourceTree = "<group>"; };
+		BF8EB50E261970190001FB0C /* factorial.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = factorial.c; sourceTree = "<group>"; };
+		BF8EB511261970AC0001FB0C /* factorial_sum.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = factorial_sum.h; sourceTree = "<group>"; };
+		BF8EB512261970AC0001FB0C /* factorial_sum.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = factorial_sum.c; sourceTree = "<group>"; };
+		BF8EB515261988F40001FB0C /* areaV.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = areaV.h; sourceTree = "<group>"; };
+		BF8EB516261988F40001FB0C /* areaV.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = areaV.c; sourceTree = "<group>"; };
+		BF8EB519261992CE0001FB0C /* gcd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gcd.h; sourceTree = "<group>"; };
+		BF8EB51A261992CE0001FB0C /* gcd.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = gcd.c; sourceTree = "<group>"; };
+		BF8EB51D261995580001FB0C /* strchar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = strchar.h; sourceTree = "<group>"; };
+		BF8EB51E261995580001FB0C /* strchar.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = strchar.c; sourceTree = "<group>"; };
+		BF8EB52126199FAA0001FB0C /* myfactorials.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = myfactorials.h; sourceTree = "<group>"; };
+		BF8EB52226199FAA0001FB0C /* myfactorials.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = myfactorials.c; sourceTree = "<group>"; };
 		BFF7C4E726102ED2001B2442 /* myprint.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = myprint.h; sourceTree = "<group>"; };
 		BFF7C4E826102ED2001B2442 /* myprint.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = myprint.c; sourceTree = "<group>"; };
 		BFF7C4EB2610334F001B2442 /* dubble_sort.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dubble_sort.h; sourceTree = "<group>"; };
@@ -103,6 +127,22 @@
 				BFF7C4FC26107AFD001B2442 /* order_search.c */,
 				BFF7C4FF261083BB001B2442 /* binary_search.h */,
 				BFF7C500261083BB001B2442 /* binary_search.c */,
+				BF59C7DD2619572700831561 /* strcmp_alias.h */,
+				BF59C7DE2619572700831561 /* strcmp_alias.c */,
+				BF8EB50926196A2A0001FB0C /* prime.h */,
+				BF8EB50A26196A2A0001FB0C /* prime.c */,
+				BF8EB50D261970190001FB0C /* factorial.h */,
+				BF8EB50E261970190001FB0C /* factorial.c */,
+				BF8EB511261970AC0001FB0C /* factorial_sum.h */,
+				BF8EB512261970AC0001FB0C /* factorial_sum.c */,
+				BF8EB515261988F40001FB0C /* areaV.h */,
+				BF8EB516261988F40001FB0C /* areaV.c */,
+				BF8EB519261992CE0001FB0C /* gcd.h */,
+				BF8EB51A261992CE0001FB0C /* gcd.c */,
+				BF8EB51D261995580001FB0C /* strchar.h */,
+				BF8EB51E261995580001FB0C /* strchar.c */,
+				BF8EB52126199FAA0001FB0C /* myfactorials.h */,
+				BF8EB52226199FAA0001FB0C /* myfactorials.c */,
 			);
 			path = demo;
 			sourceTree = "<group>";
@@ -164,14 +204,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF65219A25EAB9EC009B33CB /* getpwd.c in Sources */,
+				BF59C7DF2619572700831561 /* strcmp_alias.c in Sources */,
 				BFF7C4E926102ED2001B2442 /* myprint.c in Sources */,
 				BF285C8425E6ADC3007B3BF9 /* itoa.c in Sources */,
+				BF8EB51B261992CE0001FB0C /* gcd.c in Sources */,
+				BF8EB52326199FAA0001FB0C /* myfactorials.c in Sources */,
 				BFF7C4F126103C52001B2442 /* select_sort.c in Sources */,
 				BFF7C4F926106370001B2442 /* shell_sort.c in Sources */,
+				BF8EB50F261970190001FB0C /* factorial.c in Sources */,
 				BFF7C4ED2610334F001B2442 /* dubble_sort.c in Sources */,
 				BFF7C501261083BB001B2442 /* binary_search.c in Sources */,
+				BF8EB513261970AC0001FB0C /* factorial_sum.c in Sources */,
 				BFF7C4FD26107AFD001B2442 /* order_search.c in Sources */,
+				BF8EB50B26196A2A0001FB0C /* prime.c in Sources */,
+				BF8EB517261988F40001FB0C /* areaV.c in Sources */,
 				BF285C7B25E3FA90007B3BF9 /* main.c in Sources */,
+				BF8EB51F261995580001FB0C /* strchar.c in Sources */,
 				BFF7C4F52610570D001B2442 /* insert_sort.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

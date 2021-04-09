@@ -17,12 +17,45 @@
 #include "shell_sort.h"
 #include "order_search.h"
 #include "binary_search.h"
+#include "strcmp_alias.h"
+#include "prime.h"
+#include "factorial_sum.h"
+#include "areaV.h"
+#include "gcd.h"
+#include "strchar.h"
+#include "myfactorials.h"
 
+#if _WIN32 // 识别windows平台
+#include <windows.h>
+#elseif __linux__ // 识别linux平台
+#include <unistd.h>
+#endif
+
+int area1,area2,area3; // 全局变量
+// 函数
+// c语言不允许函数嵌套定义
+// 以下这样的写法是正确的。两个函数func1()并没有在func2()中定义，只是调用了，因此是可以的
+void func1() {
+    printf("123");
+}
+void func2() {
+    printf("456");
+    func1();
+}
 int c1;
 float c2;
 char c3;
 int main(int argc, const char * argv[]) {
     // insert code here...
+    
+    // 不同的平台下调用不同的函数
+#if _WIN32
+    Sleep(5000);
+#elseif __linux__
+    sleep(5);
+#endif
+    printf("test for precompiler\n");
+    
     int a = 99;
     char c = 'A';
     float d = 90.99;
@@ -782,4 +815,46 @@ int main(int argc, const char * argv[]) {
     // 折半查找的前提是已经拍好序了，一般不在链表中使用折半查找，反而可能会降低效率
     int lengths2 = sizeof(test_ar4) / sizeof(int);
     binary_search(test_ar4,lengths2,43);
+    
+    // 函数
+    char strw1[] = "http://c.biancheng.net/view/1850.html";
+    char strw2[] = "https://segmentfault.com/a/1190000019818564";
+    int resultw = strcmp(strw1, strw2);
+    printf("%d \n",resultw);
+    // 函数不能嵌套定义，main也是一个函数定义，因此要将自己定义的函数放在main外面，必须先定义后使用
+    // 注意：main 是函数定义，不是函数调用。当可执行文件加载到内存后，系统从 main 函数开始执行，也就是说，系统会调用我们定义的 main 函数
+    char str33[] = "dfsasf";
+    char str44[] = "llllllll";
+    int result_9 = strcmp_alias(str33,str44);
+    printf("str33 - str44 = %d \n",result_9);
+    // 判断是否为素数
+//    int nn;
+//    scanf("please enter a number %d",&nn);
+//    prime(nn);
+    printf("1-10的阶乘和为： %ld\n",factorial_sum(10));
+    int vv , length3 , widths, heights;
+    printf("enter length , with, height: ");
+    scanf("%d %d %d",&length3, &widths, &heights);
+    vv = areaV(length3,widths,heights);
+    printf("v= %d,area1 = %d, area2 = %d, area3 = %d\n",vv,area1,area2,area3);
+    printf("the greatest common divisor is %d\n",gcd(100, 60));
+    char urls[] = "http://baidu.com";
+    char cs = 'c';
+    strchar(urls,cs);
+    printf("factorials(10) = %d\n",myfactorials(5));
+    // 以#号开头的命令称为预处理命令
+    // 在编译之前对源文件进行简单加工的过程，就称为预处理（即预先处理、提前处理）
+    // 编译实例: 开发一个C语言程序，让它暂停 5 秒以后再输出内容，并且要求跨平台，在 Windows 和 Linux 下都能运行
+    // 不同平台下的暂停函数和头文件都不一样 Windows 平台下的暂停函数的原型是void Sleep(DWORD dwMilliseconds)（注意 S 是大写的），参数的单位是“毫秒”，位于 <windows.h> 头文件。
+    //    Linux 平台下暂停函数的原型是unsigned int sleep (unsigned int seconds)，参数的单位是“秒”，位于 <unistd.h> 头文件
+    // 这就要求我们在编译之前，也就是预处理阶段来解决这个问题
+    // ！！！写在最上面了
+    // #if、#elif、#endif 就是预处理命令，它们都是在编译之前由预处理程序来执行的
+    
+    // #include叫做文件包含命令，用来引入对应的头文件（.h文件）。#include 也是C语言预处理命令的一种
+    // 使用尖括号< >和双引号" "的区别在于头文件的搜索路径不同
+    // 使用尖括号< >，编译器会到系统路径下查找头文件；
+    // 而使用双引号" "，编译器首先在当前目录下查找头文件，如果没有找到，再到系统路径下查找
+    
+    // #define 叫做宏定义命令，它也是C语言预处理命令的一种。所谓宏定义，就是用一个标识符来表示一个字符串，如果在后面的代码中出现了该标识符，那么就全部替换成指定的字符串
 }
