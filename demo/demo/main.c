@@ -24,6 +24,8 @@
 #include "gcd.h"
 #include "strchar.h"
 #include "myfactorials.h"
+#include "second_main.h"
+#include "pointer.h" // 指针
 
 #if _WIN32 // 识别windows平台
 #include <windows.h>
@@ -834,7 +836,7 @@ int main(int argc, const char * argv[]) {
     printf("1-10的阶乘和为： %ld\n",factorial_sum(10));
     int vv , length3 , widths, heights;
     printf("enter length , with, height: ");
-    scanf("%d %d %d",&length3, &widths, &heights);
+//    scanf("%d %d %d",&length3, &widths, &heights);
     vv = areaV(length3,widths,heights);
     printf("v= %d,area1 = %d, area2 = %d, area3 = %d\n",vv,area1,area2,area3);
     printf("the greatest common divisor is %d\n",gcd(100, 60));
@@ -857,4 +859,6 @@ int main(int argc, const char * argv[]) {
     // 而使用双引号" "，编译器首先在当前目录下查找头文件，如果没有找到，再到系统路径下查找
     
     // #define 叫做宏定义命令，它也是C语言预处理命令的一种。所谓宏定义，就是用一个标识符来表示一个字符串，如果在后面的代码中出现了该标识符，那么就全部替换成指定的字符串
+    second_main();
+    pointer();
 }

@@ -18,6 +18,12 @@
 		BF8EB51B261992CE0001FB0C /* gcd.c in Sources */ = {isa = PBXBuildFile; fileRef = BF8EB51A261992CE0001FB0C /* gcd.c */; };
 		BF8EB51F261995580001FB0C /* strchar.c in Sources */ = {isa = PBXBuildFile; fileRef = BF8EB51E261995580001FB0C /* strchar.c */; };
 		BF8EB52326199FAA0001FB0C /* myfactorials.c in Sources */ = {isa = PBXBuildFile; fileRef = BF8EB52226199FAA0001FB0C /* myfactorials.c */; };
+		BF902D8E2622A75F002BAC46 /* second_main.c in Sources */ = {isa = PBXBuildFile; fileRef = BF902D8D2622A75F002BAC46 /* second_main.c */; };
+		BF902D922622EACA002BAC46 /* pointer.c in Sources */ = {isa = PBXBuildFile; fileRef = BF902D912622EACA002BAC46 /* pointer.c */; };
+		BF902E58262F1F81002BAC46 /* swap.c in Sources */ = {isa = PBXBuildFile; fileRef = BF902E57262F1F81002BAC46 /* swap.c */; };
+		BF902E5C262F206B002BAC46 /* right_swap.c in Sources */ = {isa = PBXBuildFile; fileRef = BF902E5B262F206B002BAC46 /* right_swap.c */; };
+		BF902E60262F225D002BAC46 /* arr_max.c in Sources */ = {isa = PBXBuildFile; fileRef = BF902E5F262F225D002BAC46 /* arr_max.c */; };
+		BF902E64262F26AC002BAC46 /* strlong.c in Sources */ = {isa = PBXBuildFile; fileRef = BF902E63262F26AC002BAC46 /* strlong.c */; };
 		BFF7C4E926102ED2001B2442 /* myprint.c in Sources */ = {isa = PBXBuildFile; fileRef = BFF7C4E826102ED2001B2442 /* myprint.c */; };
 		BFF7C4ED2610334F001B2442 /* dubble_sort.c in Sources */ = {isa = PBXBuildFile; fileRef = BFF7C4EC2610334F001B2442 /* dubble_sort.c */; };
 		BFF7C4F126103C52001B2442 /* select_sort.c in Sources */ = {isa = PBXBuildFile; fileRef = BFF7C4F026103C52001B2442 /* select_sort.c */; };
@@ -62,6 +68,18 @@
 		BF8EB51E261995580001FB0C /* strchar.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = strchar.c; sourceTree = "<group>"; };
 		BF8EB52126199FAA0001FB0C /* myfactorials.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = myfactorials.h; sourceTree = "<group>"; };
 		BF8EB52226199FAA0001FB0C /* myfactorials.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = myfactorials.c; sourceTree = "<group>"; };
+		BF902D8C2622A75F002BAC46 /* second_main.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = second_main.h; sourceTree = "<group>"; };
+		BF902D8D2622A75F002BAC46 /* second_main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = second_main.c; sourceTree = "<group>"; };
+		BF902D902622EACA002BAC46 /* pointer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pointer.h; sourceTree = "<group>"; };
+		BF902D912622EACA002BAC46 /* pointer.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = pointer.c; sourceTree = "<group>"; };
+		BF902E56262F1F81002BAC46 /* swap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = swap.h; sourceTree = "<group>"; };
+		BF902E57262F1F81002BAC46 /* swap.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = swap.c; sourceTree = "<group>"; };
+		BF902E5A262F206B002BAC46 /* right_swap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = right_swap.h; sourceTree = "<group>"; };
+		BF902E5B262F206B002BAC46 /* right_swap.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = right_swap.c; sourceTree = "<group>"; };
+		BF902E5E262F225D002BAC46 /* arr_max.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = arr_max.h; sourceTree = "<group>"; };
+		BF902E5F262F225D002BAC46 /* arr_max.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = arr_max.c; sourceTree = "<group>"; };
+		BF902E62262F26AC002BAC46 /* strlong.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = strlong.h; sourceTree = "<group>"; };
+		BF902E63262F26AC002BAC46 /* strlong.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = strlong.c; sourceTree = "<group>"; };
 		BFF7C4E726102ED2001B2442 /* myprint.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = myprint.h; sourceTree = "<group>"; };
 		BFF7C4E826102ED2001B2442 /* myprint.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = myprint.c; sourceTree = "<group>"; };
 		BFF7C4EB2610334F001B2442 /* dubble_sort.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dubble_sort.h; sourceTree = "<group>"; };
@@ -143,6 +161,18 @@
 				BF8EB51E261995580001FB0C /* strchar.c */,
 				BF8EB52126199FAA0001FB0C /* myfactorials.h */,
 				BF8EB52226199FAA0001FB0C /* myfactorials.c */,
+				BF902D8C2622A75F002BAC46 /* second_main.h */,
+				BF902D8D2622A75F002BAC46 /* second_main.c */,
+				BF902D902622EACA002BAC46 /* pointer.h */,
+				BF902D912622EACA002BAC46 /* pointer.c */,
+				BF902E56262F1F81002BAC46 /* swap.h */,
+				BF902E57262F1F81002BAC46 /* swap.c */,
+				BF902E5A262F206B002BAC46 /* right_swap.h */,
+				BF902E5B262F206B002BAC46 /* right_swap.c */,
+				BF902E5E262F225D002BAC46 /* arr_max.h */,
+				BF902E5F262F225D002BAC46 /* arr_max.c */,
+				BF902E62262F26AC002BAC46 /* strlong.h */,
+				BF902E63262F26AC002BAC46 /* strlong.c */,
 			);
 			path = demo;
 			sourceTree = "<group>";
@@ -204,6 +234,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF65219A25EAB9EC009B33CB /* getpwd.c in Sources */,
+				BF902D8E2622A75F002BAC46 /* second_main.c in Sources */,
 				BF59C7DF2619572700831561 /* strcmp_alias.c in Sources */,
 				BFF7C4E926102ED2001B2442 /* myprint.c in Sources */,
 				BF285C8425E6ADC3007B3BF9 /* itoa.c in Sources */,
@@ -211,12 +242,17 @@
 				BF8EB52326199FAA0001FB0C /* myfactorials.c in Sources */,
 				BFF7C4F126103C52001B2442 /* select_sort.c in Sources */,
 				BFF7C4F926106370001B2442 /* shell_sort.c in Sources */,
+				BF902E5C262F206B002BAC46 /* right_swap.c in Sources */,
+				BF902E60262F225D002BAC46 /* arr_max.c in Sources */,
 				BF8EB50F261970190001FB0C /* factorial.c in Sources */,
 				BFF7C4ED2610334F001B2442 /* dubble_sort.c in Sources */,
 				BFF7C501261083BB001B2442 /* binary_search.c in Sources */,
 				BF8EB513261970AC0001FB0C /* factorial_sum.c in Sources */,
 				BFF7C4FD26107AFD001B2442 /* order_search.c in Sources */,
 				BF8EB50B26196A2A0001FB0C /* prime.c in Sources */,
+				BF902E58262F1F81002BAC46 /* swap.c in Sources */,
+				BF902D922622EACA002BAC46 /* pointer.c in Sources */,
+				BF902E64262F26AC002BAC46 /* strlong.c in Sources */,
 				BF8EB517261988F40001FB0C /* areaV.c in Sources */,
 				BF285C7B25E3FA90007B3BF9 /* main.c in Sources */,
 				BF8EB51F261995580001FB0C /* strchar.c in Sources */,
